@@ -17,9 +17,9 @@
   font-family: "Gill Sans", sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position:absolute;
   height: 100%;
+  width: 100%;
   left:0;
   right:0;
   flex-grow: 1;
@@ -52,5 +52,9 @@
 }
 #navList a:hover{
   background-color: lightgray;
+}
+
+body{
+  width: 100%;
 }
 
