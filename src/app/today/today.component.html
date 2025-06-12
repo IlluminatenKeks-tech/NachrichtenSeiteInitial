@@ -1,1 +1,4 @@
-<p>today works!</p>
+<h1>News des Tages</h1>
+@for(breakingNews of news; track $index){
+  <li>{{breakingNews.title}}</li>
+}
