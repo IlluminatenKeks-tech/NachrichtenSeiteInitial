@@ -2,14 +2,14 @@
 <h2>Aus der ganzen Welt</h2>
 @for(breakingNews of globalNews; track $index; let i = $index){
   <div class="newsTile">
-  <li>{{breakingNews.title}}</li>
+    <li><a routerLink="/today/{{i}}">{{breakingNews.title}}</a></li>
    <!--- <img src="{{globalNewsTeaserPictures[i].imageVariants['1x1-144']}}}"> --->
   </div>
 }
 <h2>Aus Deutschland</h2>
 @for(germanNews of germanyNews; track $index; let i = $index){
   <div class="newsTile">
-    <li>{{germanNews.title}}</li>
+    <li><a>{{germanNews.title}}</a></li>
    <!--- <img src="{{germanyNewsTeaserPictures[i].imageVariants['1x1-144']}}}"> --->
     <!---Tagesschau blockiert Anfrage. man bekommt die Bilder über diesen Zugriff nicht geladen---->
 

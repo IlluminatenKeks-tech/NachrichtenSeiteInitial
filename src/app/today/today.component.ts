@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import {DataService} from '../shared/data.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-today',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './today.component.html',
   styleUrl: './today.component.css'
 })
