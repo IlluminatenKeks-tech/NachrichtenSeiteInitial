@@ -4,6 +4,7 @@ import {AboutComponent} from './about/about.component';
 import {JokesComponent} from './jokes/jokes.component';
 import {NewsComponent} from './news/news.component';
 import {TodayComponent} from './today/today.component';
+import {SingleNewsPageComponent} from './single-news-page/single-news-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'jokes', component: JokesComponent },
   { path: 'news', component: NewsComponent },
   { path: 'today', component: TodayComponent },
+  { path: 'today/:id/:param', component: SingleNewsPageComponent },
 ];
