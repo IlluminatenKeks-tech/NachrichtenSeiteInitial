@@ -1,5 +1,7 @@
-# API Link
+# API Links
 https://tagesschau.api.bund.dev
+
+https://sv443.net/jokeapi/v2/
 
 
 

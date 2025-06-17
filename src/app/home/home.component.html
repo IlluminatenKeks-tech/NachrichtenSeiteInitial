@@ -1,1 +1,18 @@
-<p>home works!</p>
+<h2>Willkommen bei Tageschaos</h2>
+<h3>Ihre tägliche Quelle für aktuelle Nachrichten, spannende Geschichten und den Witz des Tages!
+  <br> Bleiben Sie informiert und gut gelaunt – jeden Tag, direkt hier.</h3>
+
+<div class="important-announcements">
+  <h2>Wichtige Ankündigungen</h2>
+
+  <div class="news-grid">
+    @for (news of importantNews; track $index; let i = $index) {
+      <div class="news-item">
+        <img [src]="news.teaserImage?.imageUrl" alt="Bild" class="news-img" />
+        <h3>{{ news.title }}</h3>
+        <a [href]="news.detailsweb" target="_blank">Mehr lesen →</a>
+      </div>
+    }
+  </div>
+
+</div>
