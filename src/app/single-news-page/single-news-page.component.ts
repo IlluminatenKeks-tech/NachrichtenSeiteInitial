@@ -11,7 +11,7 @@ import {DataService} from '../shared/data.service';
 export class SingleNewsPageComponent {
   index: any;
   news: any;
-  News: any;
+  NewsArticles: any;
   article: any;
   articleContent: any;
   param: any;
@@ -22,17 +22,18 @@ export class SingleNewsPageComponent {
     this.index = this.route.snapshot.paramMap.get('id');
     this.param = this.route.snapshot.paramMap.get('param');
     console.log(this.index);
-    this.news = await this.dataService.getNews();
+
     if(this.param == 1) {
-      this.News = this.news.news;
-      this.article = this.News[this.index];
+      this.news = await this.dataService.getNews();
+      this.NewsArticles = this.news.news;
+      this.article = this.NewsArticles[this.index];
     }
     else if(this.param == 2) {
-      this.News = this.news.regional
-      this.article = this.News[this.index];
+      this.news = await this.dataService.getNews();
+      this.NewsArticles = this.news.regional
+      this.article = this.NewsArticles[this.index];
     }
     this.articleContent = this.article.content;
-    console.log(this.news);
     console.log(this.article);
   }
 
