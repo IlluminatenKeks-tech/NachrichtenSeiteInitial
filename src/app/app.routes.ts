@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'jokes', component: JokesComponent },
   { path: 'news', component: NewsComponent },
   { path: 'today', component: TodayComponent },
-  { path: 'today/:id', component: SingleNewsPageComponent },
+  { path: 'today/:id/:param', component: SingleNewsPageComponent },
 ];

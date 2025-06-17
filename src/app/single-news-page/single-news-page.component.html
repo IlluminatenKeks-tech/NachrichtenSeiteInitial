@@ -1,3 +1,4 @@
 @for(cont of articleContent; track $index){
-  <p>{{cont.value}}</p>
+  <p [innerHTML]="cont.value"></p>
+
 }
