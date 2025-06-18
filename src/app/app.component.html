@@ -1,21 +1,27 @@
 <div class="body">
-<div class="nav">
-  <p id="navTitle">Nachrichten</p>
-  <div id="navList">
-    <a routerLink="/">Home</a>
-    <a routerLink="/today">Heute</a>
-    <a routerLink="/news">Alle Nachrichten</a>
-    <a routerLink="/jokes">Witz</a>
-    <a routerLink="/about">About</a>
+
+  <div class="nav">
+    <div class="brand">
+      <img src="/chaos-icon.png" alt="Tageschaos logo" id="navIcon"/>
+      <p id="navTitle">Tageschaos</p>
+    </div>
+
+    <div id="navList">
+      <a routerLink="/">Home</a>
+      <a routerLink="/today">Heute</a>
+      <a routerLink="/news">Alle Nachrichten</a>
+      <a routerLink="/jokes">Witz</a>
+      <a routerLink="/about">About</a>
+    </div>
   </div>
-</div>
 
-<div class="content">
-<router-outlet />
-</div>
+  <div class="content">
+  <router-outlet />
+  </div>
 
-<div class="footer">
+  <div class="footer">
+    <p id="footer">© 2025 Tageschaos</p>
+  </div>
 
-</div>
 </div>
 

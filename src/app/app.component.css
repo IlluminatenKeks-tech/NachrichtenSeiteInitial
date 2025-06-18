@@ -1,8 +1,86 @@
-.nav{
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  min-height: calc(100vh + 200px)
+}
+
+.nav {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  background: lightgray;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#navList {
+  display: flex;
+  gap: 20px;
+}
+
+#navList a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+#navList a:hover {
+  background-color: lightgray;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#navIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+#navTitle {
+  color: #333;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: lightgray;
+  color: black;
+}
+
+/*--------------- old -----------------*/
+/*
+
+.nav {
   display: flex;
   width: 100%;
   height: 50px;
-  background: gray;
+  background: lightgray;
   top: 0;
   left:0;
   right:0;
@@ -54,7 +132,19 @@
   background-color: lightgray;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#navIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
 body{
   width: 100%;
 }
-
+*/

@@ -4,16 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class JokeService {
-  private apiUrl = 'https://v2.jokeapi.dev/joke/Any?lang=de&blacklistFlags=nsfw,religious,racist,sexist,explicit&type=single';
+  private baseUrl = 'https://v2.jokeapi.dev/joke/';
 
-  constructor() { }
+  constructor() {}
 
-  async getJoke(): Promise<any> {
-    const response = await fetch(this.apiUrl);
-    if (!response.ok) {
-      throw new Error('Fehler beim Laden der Witzen');
+  async getJokeWithParams(lang = 'de', category = 'Any', type = 'any'): Promise<any> {
+    const blacklist = 'nsfw,religious,racist,sexist,explicit';
+    let url = `${this.baseUrl}${category}?lang=${lang}&blacklistFlags=${blacklist}`;
+
+    if (type !== 'any') {
+      url += `&type=${type}`;
     }
-    return response.json();
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Fehler beim Laden der Witze');
+    return await response.json();
   }
 
 }
