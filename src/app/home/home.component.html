@@ -8,11 +8,46 @@
   <div class="news-grid">
     @for (news of importantNews; track $index; let i = $index) {
       <div class="news-item">
-        <img [src]="news.teaserImage?.imageUrl" alt="Bild" class="news-img" />
+        <!--<img [src]="news.teaserImage?.imageUrl" alt="Bild" class="news-img" />-->
         <h3>{{ news.title }}</h3>
-        <a [href]="news.detailsweb" target="_blank">Mehr lesen →</a>
+        <a routerLink="/today/{{i}}/1">Mehr lesen →</a>
+        <!--<a [href]="news.detailsweb" target="_blank">Mehr lesen →</a>-->
       </div>
     }
+  </div>
+
+</div>
+
+<div class="explore-section">
+  <h2>Entdecken Sie mehr auf Tageschaos</h2>
+
+  <div class="explore-grid">
+
+    <a routerLink="/today" class="explore-card">
+      <h3>🗓️ Heute</h3>
+      <p>Was ist heute wichtig? Erfahren Sie die Top-Schlagzeilen des Tages.</p>
+    </a>
+
+    <a routerLink="/news" class="explore-card">
+      <h3>📰 Alle Nachrichten</h3>
+      <p>Durchstöbern Sie alle Nachrichten an einem Ort.</p>
+    </a>
+
+    <a routerLink="/jokes" class="explore-card">
+      <h3>😂 Witz des Tages</h3>
+      <p>Auch Chaos braucht Humor. Entdecken Sie den Witz des Tages!</p>
+    </a>
+
+    <a routerLink="/bahnstoerungen" class="explore-card">
+      <h3>🚆 Bahn-Störungen</h3>
+      <p>Aktuelle Infos zu Ausfällen und Verspätungen im Bahnverkehr.</p>
+    </a>
+
+    <a routerLink="/about" class="explore-card">
+      <h3>👥 Über uns</h3>
+      <p>Wer steckt hinter Tageschaos? Lernen Sie uns kennen!</p>
+    </a>
+
   </div>
 
 </div>

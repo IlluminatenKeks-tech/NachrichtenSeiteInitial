@@ -1,1 +1,58 @@
-<p>jokes works!</p>
+<div class="joke-container">
+
+  @if (joke === null) {
+    <p class="loading">⏳ Witz wird geladen...</p>
+  } @else {
+    <div class="joke-box" (click)="togglePunchline()">
+
+      <p class="joke-text">
+        {{ joke.setup || joke.joke }}
+        @if (joke.type === 'twopart' && !showPunchline) {
+          <span class="hint">(Klicke zum Aufdecken)</span>
+        }
+      </p>
+
+      @if (joke.type === 'twopart' && showPunchline) {
+        <p class="joke-punchline">{{ joke.delivery }}</p>
+      }
+
+    </div>
+  }
+
+  <button class="reload-button" (click)="loadJoke()" title="Neuen Witz laden">
+    <img src="/arr-icon.png" alt="Neu laden" />
+  </button>
+
+  <form class="settings" (submit)="loadJoke(); $event.preventDefault();">
+    <label>
+      Sprache:
+      <select (change)="setLang($event)">
+        <option value="de" [selected]="language === 'de'">Deutsch</option>
+        <option value="en" [selected]="language === 'en'">Englisch</option>
+      </select>
+    </label>
+
+    <label>
+      Kategorie:
+      <select (change)="setCategory($event)">
+        <option value="Any" [selected]="category === 'Any'">Alle</option>
+        <option value="Programming" [selected]="category === 'Programming'">Programmierung</option>
+        <option value="Misc" [selected]="category === 'Misc'">Verschiedenes</option>
+        <option value="Dark" [selected]="category === 'Dark'">Dunkel</option>
+        <option value="Pun" [selected]="category === 'Pun'">Wortspiel</option>
+      </select>
+    </label>
+
+    <label>
+      Typ:
+      <select (change)="setType($event)">
+        <option value="any" [selected]="type === 'any'">Alle</option>
+        <option value="single" [selected]="type === 'single'">Einzel</option>
+        <option value="twopart" [selected]="type === 'twopart'">Zweiteilig</option>
+      </select>
+    </label>
+
+    <!--<button type="submit">🔍 Witz suchen</button>-->
+  </form>
+
+</div>

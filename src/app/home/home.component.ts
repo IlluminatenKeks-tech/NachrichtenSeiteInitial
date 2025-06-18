@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ImpnewsService} from '../shared/impnews.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
