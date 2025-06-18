@@ -1,1 +1,41 @@
-<p>news works!</p>
+<h1>Alle Nachrichten</h1>
+<div class="upperPart">
+
+  <button class="reload-button" (click)="loadNews()" title="Neue Nachrichten laden">
+    <img src="/arr-icon.png" alt="Neu laden" />
+  </button>
+
+<form class="settings" (submit)="loadNews(); $event.preventDefault();">
+  <label>
+    Themengebiet:
+    <select (change)="setCategory($event)">
+      <option value="inland" [selected]="category === 'inland'">Inland</option>
+      <option value="ausland" [selected]="category === 'ausland'">Ausland</option>
+      <option value="wirtschaft" [selected]="category === 'wirtschaft'">Wirtschaft</option>
+      <option value="sport" [selected]="category === 'sport'">Sport</option>
+      <option value="investigativ" [selected]="category === 'investigativ'">Investigativ</option>
+      <option value="wissen" [selected]="category === 'wissen'">Wissen</option>
+    </select>
+  </label>
+  <label>
+    Region:
+    <select (change)="setRegion($event)">
+      <option value="0" [selected]="region === '0'">ganz Deutschland</option>
+      <option value="1" [selected]="region === '1'">Baden-Württemberg</option>
+      <option value="2" [selected]="region === '2'">Bayern</option>
+      <option value="3" [selected]="region === '3'">Berlin</option>
+      <option value="4" [selected]="region === '4'">Brandenburg</option>
+      <option value="5" [selected]="region === '5'">Bremen</option>
+      <option value="6" [selected]="region === '6'">Hamburg</option>
+      <option value="7" [selected]="region === '7'">Hessen</option>
+    </select>
+  </label>
+</form>
+<input type="text" placeholder="Suchen..." (change)="setSearchText($event)">
+</div>
+@for(News of news; track $index; let i = $index){
+  <div class="newsTile">
+    <li><a routerLink="/today/{{i}}/3">{{News.title}}</a></li>
+    <p>{{News.firstSentence}}</p>
+  </div>
+}

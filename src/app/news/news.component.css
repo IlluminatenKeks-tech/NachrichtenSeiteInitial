@@ -1,0 +1,69 @@
+.newsTile li{
+  list-style: none;
+}
+.newsTile:hover{}
+
+.newsTile{
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.reload-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  transition: transform .2s ease;
+}
+
+.reload-button:hover {
+  transform: rotate(90deg);
+}
+
+.reload-button img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.settings {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.settings label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.settings select {
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+}
+
+.settings button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings button:hover {
+  background-color: #005f99;
+}
+
+.upperPart{
+  display: flex;
+  flex-direction: row;
+}

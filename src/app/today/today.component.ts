@@ -11,28 +11,24 @@ import {RouterLink} from '@angular/router';
   styleUrl: './today.component.css'
 })
 export class TodayComponent {
-news: any;
-globalNews: any;
-globalNewsTeaserPictures: any [] = [];
-germanyNews: any;
-germanyNewsTeaserPictures : any [] = [];
+  news: any;
+  globalNews: any;
+  germanyNews: any;
 
 
+  constructor(private dataService: DataService) {
+  }
 
-constructor(private dataService: DataService) { }
   async ngOnInit() {
-  this.news = await this.dataService.getNews();
-  this.germanyNews = this.news.regional
-    for(let i = 0; i < this.germanyNews.length; i++){
-      this.germanyNewsTeaserPictures[i] = this.germanyNews[i].teaserImage;
-    }
-    this.globalNews = this.news.news;
-    for(let i = 0; i < this.globalNews.length; i++){
-      this.globalNewsTeaserPictures[i] = this.globalNews[i].teaserImage;
-    }
+    try {
+      this.news = await this.dataService.getNews();
+      this.germanyNews = this.news.regional
 
-  console.log(this.germanyNews);
-  console.log(this.news);
-  console.log(this.germanyNewsTeaserPictures);
+      this.globalNews = this.news.news;
+      console.log(this.germanyNews);
+      console.log(this.news);
+    } catch (error) {
+      console.log("Fehler beim Laden der Nachrichten" + error);
+    }
   }
 }
