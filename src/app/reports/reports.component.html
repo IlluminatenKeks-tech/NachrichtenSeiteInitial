@@ -1,0 +1,106 @@
+<div class="report-controls">
+  <button class="open-report-btn" (click)="showReportForm = true">+ Meldung erfassen</button>
+  <div class="filter-buttons">
+    <button type="button" (click)="reportView = 'latest'">Letzte 5</button>
+    <button type="button" (click)="reportView = 'hour'">Letzte Stunde</button>
+    <button type="button" (click)="reportView = 'day'">Heute</button>
+  </div>
+</div>
+
+@if (displayedReports.length > 0) {
+  <div class="latest-reports">
+    <h2>Letzte Meldungen</h2>
+
+    <div class="report-grid">
+      @for (r of displayedReports; track r.timestamp) {
+        <div class="report-card">
+          <p>
+            <strong>{{ r.city }} - {{ r.transportType }}</strong>
+            @if (r.line) {
+              @if (r.transportType !== 'Station') {
+                Linie {{ r.line }}
+              } @else {
+                {{ r.line }}
+              }
+            }
+            <br>
+            {{ r.problemType }}
+            @if (r.details) {
+              <br><em>{{ r.details }}</em>
+            }
+          </p>
+
+          <span class="report-time">{{ r.timestamp | date:'shortTime' }}</span>
+        </div>
+      }
+    </div>
+  </div>
+}
+
+@if (showReportForm) {
+  <div class="overlay" (click)="showReportForm = false">
+    <div class="report-modal" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <button class="close-btn" (click)="showReportForm = false">×</button>
+      </div>
+
+      <div class="report-container">
+        <h2>Verkehrsmeldung registrieren</h2>
+
+        <form (ngSubmit)="submitReport()" #reportForm="ngForm">
+          <!-- City -->
+          <label>Stadt:
+            <select [(ngModel)]="form.city" name="city" required>
+              <option value="Stuttgart">Stuttgart</option>
+            </select>
+          </label>
+
+          <!-- Transport Type -->
+          <label>Verkehrsmittel:
+            <select [(ngModel)]="form.transportType" name="transportType" (change)="onTransportTypeChange()" required>
+              <option value="Straßenbahn">Straßenbahn</option>
+              <option value="Seilbahn">Seilbahn</option>
+              <option value="Zahnradbahn">Zahnradbahn</option>
+              <option value="Bus">Bus</option>
+              <option value="S-Bahn">S-Bahn</option>
+              <option value="Station">Station</option>
+            </select>
+          </label>
+
+          <!-- Line or Station -->
+          @if (lineOptions.length > 0) {
+            <label for="lineSelect">Linie</label>
+            <select id="lineSelect" [(ngModel)]="form.line" name="line" required>
+              <option value="">-- Linie wählen --</option>
+              @for (l of lineOptions; track l) {
+                <option [value]="l">{{ l }}</option>
+              }
+            </select>
+          }
+
+          @if (form.transportType === 'Station') {
+            <label for="stationInput">Name der Station</label>
+            <input id="stationInput" [(ngModel)]="form.line" name="line" required placeholder="z.B. Hauptbahnhof">
+          }
+
+          <label for="problem">Was ist passiert?</label>
+          <select id="problem" [(ngModel)]="form.problemType" name="problemType" required (change)="onProblemTypeChange()">
+            <option value="">-- Problem wählen --</option>
+            @for (p of problemTypes; track p) {
+              <option [value]="p">{{ p }}</option>
+            }
+          </select>
+
+          <label for="details">Kommentar (optional)</label>
+          <textarea id="details" [(ngModel)]="form.details" name="details"
+                    [required]="form.problemType === 'Andere Problem'" placeholder="Weitere Einzelheiten..."></textarea>
+
+          <div class="submitButton">
+            <button type="submit" [disabled]="!reportForm.form.valid">Meldung senden</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+}

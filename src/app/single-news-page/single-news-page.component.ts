@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from '../shared/data.service';
+import {ImpnewsService} from '../shared/impnews.service';
 
 @Component({
   selector: 'app-single-news-page',
@@ -16,7 +17,7 @@ export class SingleNewsPageComponent {
   articleContent: any;
   param: any;
 
-  constructor(private route: ActivatedRoute, private dataService: DataService ) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService, private importantNewsService: ImpnewsService ) { }
 
   async ngOnInit() {
     this.index = this.route.snapshot.paramMap.get('id');
@@ -32,6 +33,10 @@ export class SingleNewsPageComponent {
       this.news = await this.dataService.getNews();
       this.NewsArticles = this.news.regional
       this.article = this.NewsArticles[this.index];
+    }
+    else if(this.param == 3) {
+      this.news = await this.importantNewsService.getHomepageNews();
+      this.article = this.news.news[this.index];
     }
     this.articleContent = this.article.content;
     console.log(this.article);

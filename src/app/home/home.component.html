@@ -1,6 +1,7 @@
 <h2>Willkommen bei Tageschaos</h2>
 <h3>Ihre tägliche Quelle für aktuelle Nachrichten, spannende Geschichten und den Witz des Tages!
   <br> Bleiben Sie informiert und gut gelaunt – jeden Tag, direkt hier.</h3>
+<br>
 
 <div class="important-announcements">
   <h2>Wichtige Ankündigungen</h2>
@@ -10,12 +11,12 @@
       <div class="news-item">
         <!--<img [src]="news.teaserImage?.imageUrl" alt="Bild" class="news-img" />-->
         <h3>{{ news.title }}</h3>
-        <a routerLink="/today/{{i}}/1">Mehr lesen →</a>
-        <!--<a [href]="news.detailsweb" target="_blank">Mehr lesen →</a>-->
+        <p>{{ news.firstSentence }}</p>
+        <!-- <a routerLink="/today/{{i}}/3">Mehr lesen →</a> -->
+        <a [href]="news.detailsweb" target="_blank">Mehr lesen →</a>
       </div>
     }
   </div>
-
 </div>
 
 <div class="explore-section">
@@ -38,7 +39,7 @@
       <p>Auch Chaos braucht Humor. Entdecken Sie den Witz des Tages!</p>
     </a>
 
-    <a routerLink="/bahnstoerungen" class="explore-card">
+    <a routerLink="/reports" class="explore-card">
       <h3>🚆 Bahn-Störungen</h3>
       <p>Aktuelle Infos zu Ausfällen und Verspätungen im Bahnverkehr.</p>
     </a>
