@@ -1,69 +1,83 @@
-.newsTile li{
-  list-style: none;
+.upperPart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0;
+  gap: 1rem;
 }
-.newsTile:hover{}
+
+.reload-button {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.reload-button:hover {
+  transform: rotate(90deg);
+  background-color: #e0e0e0;
+}
+
+.reload-button img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"] {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+}
 
 .newsTile{
   background: white;
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 6px;
+  margin: 1rem;
+}
+.news{
+  background-color: #f5f5f5;
+  border-left: 6px solid lightgray;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
 }
 
-.reload-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 3px;
-  transition: transform .2s ease;
+.newsTile li{
+  list-style: none;
 }
 
-.reload-button:hover {
-  transform: rotate(90deg);
-}
 
-.reload-button img {
-  width: 48px;
-  height: 48px;
-  display: block;
-}
-
-.settings {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-
-.settings label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.95rem;
-}
-
-.settings select {
-  padding: 0.3rem;
-  border-radius: 0.4rem;
-  border: 1px solid #ccc;
-}
-
-.settings button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.settings button:hover {
-  background-color: #005f99;
-}
-
-.upperPart{
-  display: flex;
-  flex-direction: row;
+.date{
+  font-size: 0.8rem;
+  font-style: italic;
 }

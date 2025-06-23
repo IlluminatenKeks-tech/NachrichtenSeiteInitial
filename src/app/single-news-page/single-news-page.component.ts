@@ -34,6 +34,9 @@ export class SingleNewsPageComponent {
         this.NewsArticles = this.news.regional
         this.article = this.NewsArticles[this.index];
       }
+      else if (this.param == 3) {
+
+      }
       this.articleContent = this.article.content;
       console.log(this.article);
     }
