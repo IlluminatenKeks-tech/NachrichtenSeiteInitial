@@ -1,17 +1,21 @@
 <h1>News des Tages</h1>
 <h2>Aus der ganzen Welt</h2>
+<div class="news">
 @for(breakingNews of globalNews; track $index; let i = $index){
   <div class="newsTile">
     <li><a routerLink="/today/{{i}}/1">{{breakingNews.title}}</a></li>
-   <!--- <img src="{{globalNewsTeaserPictures[i].imageVariants['1x1-144']}}}"> --->
+    <p>{{breakingNews.firstSentence}}</p>
+    <p class="date">{{ breakingNews.date | date: 'dd.MM.yyyy HH:mm' }}</p>
   </div>
 }
+</div>
 <h2>Aus Deutschland</h2>
+<div class="news">
 @for(germanNews of germanyNews; track $index; let i = $index){
   <div class="newsTile">
     <li><a routerLink="/today/{{i}}/2">{{germanNews.title}}</a></li>
-   <!--- <img src="{{germanyNewsTeaserPictures[i].imageVariants['1x1-144']}}}"> --->
-    <!---Tagesschau blockiert Anfrage. man bekommt die Bilder über diesen Zugriff nicht geladen---->
-
+    <p>{{germanNews.firstSentence}}</p>
+    <p class="date">{{ germanNews.date | date: 'dd.MM.yyyy HH:mm' }}</p>
   </div>
 }
+</div>

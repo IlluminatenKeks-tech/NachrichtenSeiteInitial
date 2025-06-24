@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     try {
       const data = await this.impnewsService.getHomepageNews();
       this.importantNews = data.news.slice(0, 4);
+      console.log(data);
       console.log(data.news);
     } catch (error) {
       console.error('Fehler beim Laden der Nachrichten:', error);

@@ -1,0 +1,83 @@
+.upperPart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+.reload-button {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.reload-button:hover {
+  transform: rotate(90deg);
+  background-color: #e0e0e0;
+}
+
+.reload-button img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"] {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+}
+
+.newsTile{
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem;
+}
+.news{
+  background-color: #f5f5f5;
+  border-left: 6px solid lightgray;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.newsTile li{
+  list-style: none;
+}
+
+
+.date{
+  font-size: 0.8rem;
+  font-style: italic;
+}

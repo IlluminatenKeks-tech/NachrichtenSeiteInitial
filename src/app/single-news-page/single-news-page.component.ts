@@ -17,23 +17,34 @@ export class SingleNewsPageComponent {
   articleContent: any;
   param: any;
 
+  constructor(private route: ActivatedRoute, private dataService: DataService) { }
   constructor(private route: ActivatedRoute, private dataService: DataService, private importantNewsService: ImpnewsService ) { }
 
   async ngOnInit() {
-    this.index = this.route.snapshot.paramMap.get('id');
-    this.param = this.route.snapshot.paramMap.get('param');
-    console.log(this.index);
+    try {
+      this.index = this.route.snapshot.paramMap.get('id');
+      this.param = this.route.snapshot.paramMap.get('param');
+      console.log(this.index);
 
-    if(this.param == 1) {
-      this.news = await this.dataService.getNews();
-      this.NewsArticles = this.news.news;
-      this.article = this.NewsArticles[this.index];
+      if (this.param == 1) {
+        this.news = await this.dataService.getNews();
+        this.NewsArticles = this.news.news;
+        this.article = this.NewsArticles[this.index];
+      } else if (this.param == 2) {
+        this.news = await this.dataService.getNews();
+        this.NewsArticles = this.news.regional
+        this.article = this.NewsArticles[this.index];
+      }
+      else if (this.param == 3) {
+
+      }
+      this.articleContent = this.article.content;
+      console.log(this.article);
     }
-    else if(this.param == 2) {
-      this.news = await this.dataService.getNews();
-      this.NewsArticles = this.news.regional
-      this.article = this.NewsArticles[this.index];
+    catch (error) {
+      console.log("Fehler beim Laden der Nachricht" + error);
     }
+    
     else if(this.param == 3) {
       this.news = await this.importantNewsService.getHomepageNews();
       this.article = this.news.news[this.index];

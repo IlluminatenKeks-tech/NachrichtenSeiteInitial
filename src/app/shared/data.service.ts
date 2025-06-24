@@ -11,4 +11,12 @@ news: any;
     this.news = response.json();
     return this.news;
   }
+
+  async getNewsWithParams(requestURL: string){
+    const response = await fetch(requestURL);
+    this.news = response.json();
+    return this.news;
+  }
+
+
 }
