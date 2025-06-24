@@ -6,6 +6,7 @@ import {NewsComponent} from './news/news.component';
 import {TodayComponent} from './today/today.component';
 import {SingleNewsPageComponent} from './single-news-page/single-news-page.component';
 import {SingleNewsPageParamsComponent} from './single-news-page-params/single-news-page-params.component';
+import {ReportsComponent} from './reports/reports.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: 'today', component: TodayComponent },
   { path: 'today/:id/:param', component: SingleNewsPageComponent },
   {path: 'news/:id/:case/:param', component: SingleNewsPageParamsComponent },
+  { path: 'reports', component: ReportsComponent },
 ];
