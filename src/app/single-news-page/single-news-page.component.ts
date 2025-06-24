@@ -18,6 +18,7 @@ export class SingleNewsPageComponent {
   param: any;
 
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService, private importantNewsService: ImpnewsService ) { }
 
   async ngOnInit() {
     try {
@@ -43,6 +44,13 @@ export class SingleNewsPageComponent {
     catch (error) {
       console.log("Fehler beim Laden der Nachricht" + error);
     }
+    
+    else if(this.param == 3) {
+      this.news = await this.importantNewsService.getHomepageNews();
+      this.article = this.news.news[this.index];
+    }
+    this.articleContent = this.article.content;
+    console.log(this.article);
   }
 
 }
