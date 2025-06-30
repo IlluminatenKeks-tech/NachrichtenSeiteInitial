@@ -6,14 +6,28 @@
       <p id="navTitle">Tageschaos</p>
     </div>
 
-    <div id="navList">
+    <!--<div id="navList">
       <a routerLink="/">Home</a>
       <a routerLink="/today">Heute</a>
       <a routerLink="/news">Alle Nachrichten</a>
       <a routerLink="/reports">Bahn-Störungen</a>
       <a routerLink="/jokes">Witz</a>
       <a routerLink="/about">About</a>
+    </div>-->
+
+    <button class="hamburger" (click)="toggleMenu()">
+      &#9776;
+    </button>
+
+    <div [class.responsive]="isMenuOpen" id="navList">
+      <a routerLink="/" (click)="closeMenu()">Home</a>
+      <a routerLink="/today" (click)="closeMenu()">Heute</a>
+      <a routerLink="/news" (click)="closeMenu()">Alle Nachrichten</a>
+      <a routerLink="/reports" (click)="closeMenu()">Bahn-Störungen</a>
+      <a routerLink="/jokes" (click)="closeMenu()">Witz</a>
+      <a routerLink="/about" (click)="closeMenu()">About</a>
     </div>
+
   </div>
 
   <div class="content">
