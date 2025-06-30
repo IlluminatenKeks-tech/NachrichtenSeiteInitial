@@ -3,6 +3,57 @@ https://tagesschau.api.bund.dev
 
 https://sv443.net/jokeapi/v2/
 
+## 🚋 Störungsmelder – Funktionsweise
+Diese Webanwendung ermöglicht es Nutzern, Probleme mit öffentlichen Verkehrsmitteln (Straßenbahn, S-Bahn, Bus) in Stuttgart schnell und unkompliziert zu melden. Die gemeldeten Störungen werden automatisch in einer Google-Tabelle gespeichert und können auf der Website angezeigt werden.
+
+### 📝 Formular zur Störungsmeldung
+Nutzer wählen Verkehrstyp (z.B. Straßenbahn, S-Bahn, Bus).
+
+Abhängig vom Verkehrstyp werden passende Linienoptionen angezeigt.
+
+Danach wählen sie den Störungstyp (z.B. Verspätung, Ausfall, technische Probleme usw.).
+
+Bei Auswahl von „Andere Problem“ kann ein eigenes Detail angegeben werden.
+
+Nach dem Klick auf „Absenden“ wird die Meldung an ein Google-Formular gesendet, das mit einer Google-Tabelle verbunden ist.
+
+ℹ️ Die Google Form-URL und Feldzuordnungen befinden sich direkt im Code (submitReport() Methode).
+
+### 📄 Anzeige der gemeldeten Störungen
+Beim Laden der Seite:
+
+Wird die mit dem Formular verbundene Google-Tabelle im CSV-Format abgerufen.
+
+Die Daten werden analysiert und nach Zeitstempel sortiert.
+
+Nutzer können verschiedene Ansichten auswählen:
+
+Letzte 5 Meldungen
+
+Alle Meldungen der letzten Stunde
+
+Alle Meldungen von heute
+
+ℹ️ Die Zeitstempel werden im Format dd/MM/yyyy HH:mm:ss gespeichert und entsprechend konvertiert, damit sie korrekt verarbeitet werden können.
+
+### 📤 Wichtige Hinweise
+Alle Formularmeldungen werden unsichtbar per POST an das Google-Formular gesendet.
+
+Die Seite verwendet keine Datenbank oder Backend, alles läuft rein über Google Forms & Sheets.
+
+Die letzten Meldungen werden clientseitig (im Browser) verarbeitet.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ProjektWebEng2
