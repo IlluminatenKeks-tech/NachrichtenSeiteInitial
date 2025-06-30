@@ -43,7 +43,6 @@ export class SingleNewsPageComponent {
     catch (error) {
       console.log("Fehler beim Laden der Nachricht" + error);
     }
-
     this.articleContent = this.article.content;
     console.log(this.article);
   }
