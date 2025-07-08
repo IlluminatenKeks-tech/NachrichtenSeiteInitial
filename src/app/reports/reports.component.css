@@ -103,8 +103,8 @@ form textarea {
 
 .latest-reports {
   padding: 1rem;
-  background-color: #f5f5f5;
-  border-left: 6px solid lightgray;
+  background-color: #f9f5fa;
+  border-left: 6px solid #D4C2FC;
   margin: 1rem 0;
   border-radius: 8px;
 }
