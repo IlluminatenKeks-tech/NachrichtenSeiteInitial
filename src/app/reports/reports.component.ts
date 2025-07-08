@@ -45,7 +45,7 @@ export class ReportsComponent implements OnInit {
     'Streckensperrung',
     'Unfall',
     'Stau',
-    'Andere Problem',
+    'Anderes Problem',
   ];
 
   allReports: Report[] = [];

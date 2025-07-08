@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #ffffff;
+  background-color: #f9f5fa;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin: 1rem 0;
@@ -12,7 +12,7 @@
 }
 
 .reload-button {
-  background: #f0f0f0;
+  background: #FDFCFB;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -58,15 +58,15 @@ input[type="text"] {
 }
 
 .newsTile{
-  background: white;
-  border: 1px solid #ddd;
+  background: white ;
+  border: 1px solid #EAEAEA;
   padding: 1rem;
   border-radius: 6px;
   margin: 1rem;
 }
 .news{
-  background-color: #f5f5f5;
-  border-left: 6px solid lightgray;
+  background-color: #f9f5fa;
+  border-left: 6px solid #D4C2FC ;
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 8px;
@@ -80,4 +80,13 @@ input[type="text"] {
 .date{
   font-size: 0.8rem;
   font-style: italic;
+}
+
+.card-link {
+  color: black;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
 }
