@@ -11,7 +11,11 @@ html, body {
   display: flex;
   flex-direction: column;
   max-width: 100vw;
-  min-height: calc(100vh + 200px)
+  min-height: calc(100vh + 200px);
+  /*background: #F0F4F8;*/
+  background-color: #FDFCFB;
+  color: #1F1F1F;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav {
@@ -19,7 +23,8 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   height: 60px;
-  background: lightgray;
+  /*background: #374151;*/
+  background-color: #D4C2FC;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
@@ -31,13 +36,15 @@ html, body {
 }
 
 #navList a {
-  color: black;
+  /*color: #D1D5DB;*/
+  color: #1F1F1F;
   text-decoration: none;
   padding: 8px 12px;
 }
 
 #navList a:hover {
-  background-color: lightgray;
+  background-color: #c5acfc;
+  border-radius: 10px;
 }
 
 .brand {
@@ -53,7 +60,8 @@ html, body {
 }
 
 #navTitle {
-  color: #333;
+  /*color: #D1D5DB;*/
+  color: #1F1F1F;
   font-family: 'Staatliches', sans-serif;
   font-size: 2.5rem;
   letter-spacing: 1px;
@@ -69,8 +77,8 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 60px;
-  background: lightgray;
-  color: black;
+  background: #D4C2FC;
+  color: #1F1F1F;
 }
 
 .hamburger {
@@ -79,7 +87,7 @@ html, body {
   background: none;
   border: none;
   cursor: pointer;
-  color: black;
+  color: #D1D5DB;
 }
 
 @media (max-width: 960px) {
@@ -108,3 +116,5 @@ html, body {
     display: flex;
   }
 }
+
+

@@ -3,7 +3,7 @@
 <div class="news">
 @for(breakingNews of globalNews; track $index; let i = $index){
   <div class="newsTile">
-    <li><a routerLink="/today/{{i}}/1">{{breakingNews.title}}</a></li>
+    <li><strong><a class="card-link" routerLink="/today/{{i}}/1">{{breakingNews.title}}</a></strong></li>
     <p>{{breakingNews.firstSentence}}</p>
     <p class="date">{{ breakingNews.date | date: 'dd.MM.yyyy HH:mm' }}</p>
   </div>
@@ -13,7 +13,7 @@
 <div class="news">
 @for(germanNews of germanyNews; track $index; let i = $index){
   <div class="newsTile">
-    <li><a routerLink="/today/{{i}}/2">{{germanNews.title}}</a></li>
+    <li><strong><a class="card-link"  routerLink="/today/{{i}}/2">{{germanNews.title}}</a></strong></li>
     <p>{{germanNews.firstSentence}}</p>
     <p class="date">{{ germanNews.date | date: 'dd.MM.yyyy HH:mm' }}</p>
   </div>
