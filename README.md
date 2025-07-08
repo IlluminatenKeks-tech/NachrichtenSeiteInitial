@@ -1,117 +1,116 @@
-# API Links
-https://tagesschau.api.bund.dev
+# 📰 Tageschaos – Nachrichtenportal als Angular-Webanwendung
 
-https://sv443.net/jokeapi/v2/
+## Projektübersicht
 
-## 🚋 Störungsmelder – Funktionsweise
-Diese Webanwendung ermöglicht es Nutzern, Probleme mit öffentlichen Verkehrsmitteln (Straßenbahn, S-Bahn, Bus) in Stuttgart schnell und unkompliziert zu melden. Die gemeldeten Störungen werden automatisch in einer Google-Tabelle gespeichert und können auf der Website angezeigt werden.
+Tageschaos ist eine Angular-Webanwendung, die im Rahmen eines Gruppenprojekts für den Kurs "Web Engineering 2" entwickelt wurde. Ziel war es, ein interaktives und funktionales Nachrichtenportal ohne eigenes Backend zu erstellen.
 
-### 📝 Formular zur Störungsmeldung
-Nutzer wählen Verkehrstyp (z.B. Straßenbahn, S-Bahn, Bus).
+Die Anwendung besteht aus mehreren Seiten:
 
-Abhängig vom Verkehrstyp werden passende Linienoptionen angezeigt.
+- Startseite
+- Nachrichten von heute
+- Alle Nachrichten (mit Such- und Filterfunktion)
+- Witzeseite mit themenspezifischen Witzen
+- Störungsmelder für den öffentlichen Verkehr in Stuttgart
+- Über-uns-Seite mit Projektinformationen
 
-Danach wählen sie den Störungstyp (z.B. Verspätung, Ausfall, technische Probleme usw.).
+Die Anwendung verwendet keine eigene Datenbank oder Backendserver, sondern ausschließlich öffentliche APIs sowie Google Forms und Sheets zur Datenspeicherung und -anzeige.
 
-Bei Auswahl von „Andere Problem“ kann ein eigenes Detail angegeben werden.
+---
 
-Nach dem Klick auf „Absenden“ wird die Meldung an ein Google-Formular gesendet, das mit einer Google-Tabelle verbunden ist.
+## Projektstart
 
-ℹ️ Die Google Form-URL und Feldzuordnungen befinden sich direkt im Code (submitReport() Methode).
-
-### 📄 Anzeige der gemeldeten Störungen
-Beim Laden der Seite:
-
-Wird die mit dem Formular verbundene Google-Tabelle im CSV-Format abgerufen.
-
-Die Daten werden analysiert und nach Zeitstempel sortiert.
-
-Nutzer können verschiedene Ansichten auswählen:
-
-Letzte 5 Meldungen
-
-Alle Meldungen der letzten Stunde
-
-Alle Meldungen von heute
-
-ℹ️ Die Zeitstempel werden im Format dd/MM/yyyy HH:mm:ss gespeichert und entsprechend konvertiert, damit sie korrekt verarbeitet werden können.
-
-### 📤 Wichtige Hinweise
-Alle Formularmeldungen werden unsichtbar per POST an das Google-Formular gesendet.
-
-Die Seite verwendet keine Datenbank oder Backend, alles läuft rein über Google Forms & Sheets.
-
-Die letzten Meldungen werden clientseitig (im Browser) verarbeitet.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ProjektWebEng2
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
-
-## Development server
-
-To start a local development server, run:
+Zum Starten des Projekts:
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Danach ist die Anwendung unter http://localhost:4200/ erreichbar.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Verwendete APIs
 
-```bash
-ng generate component component-name
-```
+- Tagesschau API
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+https://tagesschau.api.bund.dev
 
-```bash
-ng generate --help
-```
+→ Liefert aktuelle Nachrichten für die Seiten Heute und Alle Nachrichten.
 
-## Building
+- JokeAPI
 
-To build the project run:
+https://sv443.net/jokeapi/v2
 
-```bash
-ng build
-```
+→ Dient zur Generierung von Witzen auf der Seite Witz.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Seitenbeschreibung
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Home
+Kurze Einführung in die Webseite und Verlinkung zu den Hauptfunktionen.
 
-```bash
-ng test
-```
+### Heute
+Anzeigen der neuesten Nachrichten des Tages über die Tagesschau API.
 
-## Running end-to-end tests
+### Alle Nachrichten
+Darstellung aller verfügbaren Nachrichten mit der Möglichkeit zur Suche nach Stichwörtern und zur Filterung nach Datum.
 
-For end-to-end (e2e) testing, run:
+### Witz
+Nutzer können ein Thema auswählen, woraufhin passende Witze automatisch geladen werden. Die Witze stammen von der JokeAPI.
 
-```bash
-ng e2e
-```
+### About us
+Informationen über das Projekt.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Bahn-Störungen – Störungsmelder
 
-## Additional Resources
+Diese Seite bietet zwei Funktionen:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Meldung von Störungen
+
+    Nutzer:innen können Probleme mit öffentlichen Verkehrsmitteln in Stuttgart melden:
+
+      - Auswahl des Verkehrstyps (Straßenbahn, S-Bahn, Bus)
+
+      - Auswahl der Linie (dynamisch angepasst)
+
+      - Auswahl des Problemtyps oder Eingabe eines individuellen Problems
+
+      - Die Daten werden per unsichtbarem POST an ein Google-Formular übermittelt.
+
+      - Die Meldungen werden in einer Google-Tabelle gespeichert.
+
+2. Anzeige aktueller Störungen
+
+    - Daten aus der Google-Tabelle werden im CSV-Format geladen
+
+    - Sortierung nach Zeitstempel
+
+    - Drei Ansichtsmodi:
+
+      - Letzte 5 Meldungen
+
+      - Meldungen der letzten Stunde
+
+      - Meldungen vom heutigen Tag
+
+Die Seite benötigt weder Datenbank noch Backend – alles läuft über Google Forms & Sheets.
+
+---
+
+## Team und Aufgabenverteilung
+
+Dieses Projekt wurde im Team umgesetzt:
+
+- **Antonia Wiedenmann**:
+
+Seiten: Heute, Alle Nachrichten, About us
+
+- **Anna Tsyvinska**:
+
+Seiten: Home, Witz, Bahn-Störungen
+
+- **Gemeinsam**:
+
+Design & Navigation (app.component)
