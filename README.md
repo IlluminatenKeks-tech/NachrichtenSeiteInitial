@@ -1,5 +1,8 @@
 # 📰 Tageschaos – Nachrichtenportal als Angular-Webanwendung
 
+## Link zum Github Repository
+https://github.com/IlluminatenKeks-tech/NachrichtenSeiteInitial
+
 ## Projektübersicht
 
 Tageschaos ist eine Angular-Webanwendung, die im Rahmen eines Gruppenprojekts für den Kurs "Web Engineering 2" entwickelt wurde. Ziel war es, ein interaktives und funktionales Nachrichtenportal ohne eigenes Backend zu erstellen.
