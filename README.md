@@ -52,7 +52,8 @@ https://sv443.net/jokeapi/v2
 Kurze Einführung in die Webseite und Verlinkung zu den Hauptfunktionen.
 
 ### Heute
-Anzeigen der neuesten Nachrichten des Tages über die Tagesschau API.
+Anzeigen der neuesten Nachrichten des Tages über die Tagesschau API. 
+Klickt man auf den Titel des Artikels, so wird man auf eine andere Seite weitergeleitet, auf welcher der ganze Artikel zu finden ist.
 
 ### Alle Nachrichten
 Darstellung aller verfügbaren Nachrichten mit der Möglichkeit zur Suche nach Stichwörtern und zur Filterung nach Datum.
